@@ -35,7 +35,9 @@ namespace SchoolApp.DAL
                             FirstName = reader["FirstName"].ToString(),
                             LastName = reader["LastName"].ToString(),
                             Phone = reader["HomePhone"].ToString(),
-                            //Email = reader["Email"].ToString()
+                            BirthdayYear = reader["BirthdayYear"].ToString(),
+                            ClassRoom = reader["Class"].ToString(),
+
                         });
                     }
                 }

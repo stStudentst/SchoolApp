@@ -12,7 +12,8 @@ namespace SchoolApp.Entities
             public string FirstName { get; set; }
             public string LastName { get; set; }
             public string Phone { get; set; }
-            public string Email { get; set; }
+            public string BirthdayYear { get; set; }
+            public string ClassRoom { get; set; }
         }
     }
 
