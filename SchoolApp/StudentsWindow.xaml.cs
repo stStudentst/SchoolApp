@@ -12,6 +12,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using SchoolApp.BL;
+
 
 namespace SchoolApp
 {
@@ -26,6 +29,8 @@ namespace SchoolApp
             //bl = new bl;
             //Students = bl.GetStudents();
             InitializeComponent();
+            StudentBL studentbl = new StudentBL();
+            StudentsDataGrid.ItemsSource = studentbl.GetAllStudents();
         }
         //public List<Students> Students { get; set; }
     }

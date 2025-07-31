@@ -8,29 +8,45 @@
         Title="Students" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="4*"></RowDefinition>
-            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
+
+        <!-- שורת כותרת עם ComboBox -->
         <Grid Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <WrapPanel>
                 <TextBlock Margin="20" FontSize="20">Class</TextBlock>
-                <ComboBox Margin="20" FontSize="20" Width="100" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></ComboBox>
+                <ComboBox Margin="20" FontSize="20" Width="100" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             </WrapPanel>
         </Grid>
-        <DataGrid Grid.Row="2" Grid.Column="1"  ItemsSource="{Binding Students}">
 
-    </DataGrid>
+        <!-- טבלת התלמידות -->
+        <DataGrid x:Name="StudentsDataGrid"
+                  Grid.Row="2" Grid.Column="1"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  CanUserAddRows="False"
+                  Margin="10">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="שם פרטי" Binding="{Binding FirstName}" />
+                <DataGridTextColumn Header="שם משפחה" Binding="{Binding LastName}" />
+                <DataGridTextColumn Header="טלפון" Binding="{Binding Phone}" />
+                <DataGridTextColumn Header="אימייל" Binding="{Binding Email}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </Window>
